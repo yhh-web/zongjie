@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>MarkdownPad Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+/* GitHub stylesheet for MarkdownPad (http://markdownpad.com) */
+/* Author: Nicolas Hery - http://nicolashery.com */
+/* Version: b13fe65ca28d2e568c6ed5d7f06581183df8f2ff */
+/* Source: https://github.com/nicolahery/markdownpad-github */
+
+/* RESET
+=============================================================================*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* BODY
+=============================================================================*/
+
+body {
+  font-family: Helvetica, arial, freesans, clean, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+  padding: 20px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+body>*:first-child {
+  margin-top: 0 !important;
+}
+
+body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* BLOCKS
+=============================================================================*/
+
+p, blockquote, ul, ol, dl, table, pre {
+  margin: 15px 0;
+}
+
+/* HEADERS
+=============================================================================*/
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 tt, h1 code, h2 tt, h2 code, h3 tt, h3 code, h4 tt, h4 code, h5 tt, h5 code, h6 tt, h6 code {
+  font-size: inherit;
+}
+
+h1 {
+  font-size: 28px;
+  color: #000;
+}
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #ccc;
+  color: #000;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  color: #777;
+  font-size: 14px;
+}
+
+body>h2:first-child, body>h1:first-child, body>h1:first-child+h2, body>h3:first-child, body>h4:first-child, body>h5:first-child, body>h6:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+h1+p, h2+p, h3+p, h4+p, h5+p, h6+p {
+  margin-top: 10px;
+}
+
+/* LINKS
+=============================================================================*/
+
+a {
+  color: #4183C4;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* LISTS
+=============================================================================*/
+
+ul, ol {
+  padding-left: 30px;
+}
+
+ul li > :first-child, 
+ol li > :first-child, 
+ul li ul:first-of-type, 
+ol li ol:first-of-type, 
+ul li ol:first-of-type, 
+ol li ul:first-of-type {
+  margin-top: 0px;
+}
+
+ul ul, ul ol, ol ol, ol ul {
+  margin-bottom: 0;
+}
+
+dl {
+  padding: 0;
+}
+
+dl dt {
+  font-size: 14px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 0;
+  margin: 15px 0 5px;
+}
+
+dl dt:first-child {
+  padding: 0;
+}
+
+dl dt>:first-child {
+  margin-top: 0px;
+}
+
+dl dt>:last-child {
+  margin-bottom: 0px;
+}
+
+dl dd {
+  margin: 0 0 15px;
+  padding: 0 15px;
+}
+
+dl dd>:first-child {
+  margin-top: 0px;
+}
+
+dl dd>:last-child {
+  margin-bottom: 0px;
+}
+
+/* CODE
+=============================================================================*/
+
+pre, code, tt {
+  font-size: 12px;
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+}
+
+code, tt {
+  margin: 0 0px;
+  padding: 0px 0px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px;
+}
+
+pre>code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent;
+}
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px;
+}
+
+pre code, pre tt {
+  background-color: transparent;
+  border: none;
+}
+
+kbd {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #DDDDDD;
+    background-image: linear-gradient(#F1F1F1, #DDDDDD);
+    background-repeat: repeat-x;
+    border-color: #DDDDDD #CCCCCC #CCCCCC #DDDDDD;
+    border-image: none;
+    border-radius: 2px 2px 2px 2px;
+    border-style: solid;
+    border-width: 1px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height: 10px;
+    padding: 1px 4px;
+}
+
+/* QUOTES
+=============================================================================*/
+
+blockquote {
+  border-left: 4px solid #DDD;
+  padding: 0 15px;
+  color: #777;
+}
+
+blockquote>:first-child {
+  margin-top: 0px;
+}
+
+blockquote>:last-child {
+  margin-bottom: 0px;
+}
+
+/* HORIZONTAL RULES
+=============================================================================*/
+
+hr {
+  clear: both;
+  margin: 15px 0;
+  height: 0px;
+  overflow: hidden;
+  border: none;
+  background: transparent;
+  border-bottom: 4px solid #ddd;
+  padding: 0;
+}
+
+/* TABLES
+=============================================================================*/
+
+table th {
+  font-weight: bold;
+}
+
+table th, table td {
+  border: 1px solid #ccc;
+  padding: 6px 13px;
+}
+
+table tr {
+  border-top: 1px solid #ccc;
+  background-color: #fff;
+}
+
+table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+/* IMAGES
+=============================================================================*/
+
+img {
+  max-width: 100%
+}
+</style>
+</head>
+<body>
+<blockquote>
+<h1>《Web应用基础》课程结业报告</h1>
+<p><img src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fku.90sjimg.com%2Felement_origin_min_pic%2F17%2F09%2F18%2F1b6cfbd7003afa43a6c93bb0e9af2611.jpg&amp;refer=http%3A%2F%2Fku.90sjimg.com&amp;app=2002&amp;size=f9999,10000&amp;q=a80&amp;n=0&amp;g=0n&amp;fmt=jpeg?sec=1626772951&amp;t=b8a96501c3453649cbf6f8c60a516de4" alt="avatar" /></p>
+<blockquote>
+<p>下面我来具体说说此次实验的内容：</p>
+<h2>一.网页内容(What to do)</h2>
+<pre><code>我设计的是关于假期安排的一个网页，大
+致内容包括一下六个部分：Summer job，
+Volunteer Activity，Stay At
+Home,GO For A Trip,Physical 
+Training以及结业报告。而每个部分都设
+置了一个超链接，可以点击进去看到详细
+的内容，结业报告的内容也可以点击
+Enter the home page进行查看，将鼠标
+放在图片上即可显示该键。
+</code></pre>
+
+</blockquote>
+</blockquote>
+<hr />
+<blockquote>
+<blockquote>
+<h2>二.开发过程</h2>
+<pre><code>整个网页的完成包括了几个步骤：
+第一个就是熟悉qige.io网站上有关 
+HTML,CSS,BootStrap以及JavaScript的
+各种元素及用法。第二个就是在掌握相关
+基础使用方法上查资料各种项目的实现方法，以及相关元素。
+
+做此次网页首先对网页的布局有大概的了
+解，做到心中有数才不会乱排，我先在草
+稿纸上划分了相关区域，然后用HTML撰写
+网页的内容，最后用CSS进行排版，
+最终有了现在的初始界面，内容加好后还插入了
+几张照片的链接，我的页面总共包括6个部分，
+每个部分都设有超链接，点击都可跳
+转到下一网页，最后一部分的结业报告也
+可点击进行查看。这就是我开发的过程。
+</code></pre>
+
+</blockquote>
+</blockquote>
+<hr />
+<blockquote>
+<blockquote>
+<h2>三.问题</h2>
+<blockquote>
+<p>1.遇到的问题</p>
+<blockquote>
+<p>①第一个问题就是用Markdownpad2时不支持该种表格形式，我想在里面弄表格，我想用
+|tables|Are|cool|</p>
+<p>|----|:-----:|---:|这种格式，
+但是Markdown2不支持这种方式；</p>
+<p>②第二个问题是markdownpad2无法正确显示公式，如：</p>
+<p>accuracy = (\frac{TP+TN}{TP+FP+TN+FN})</p>
+<p>precision = (\frac{TP}{TP+FP})</p>
+<p>recall = (\frac{TP}{TP+FN})</p>
+<p>③第三个问题是CSS无法正常运行，网页打开后只是HTML里面的内容，而没有进行排布。</p>
+<p>④第四个问题是github网站打不开，提示说网址已更换</p>
+<p>⑤第五个问题是不知道VScode内置的代码片段设置</p>
+<p>⑥HTML传到github后，再打开刚刚HTML生产的网站后，就出现了乱码</p>
+<p>⑦VScode对c++语言进行调试的时候，提示调试适配器进程意外终止</p>
+<p>⑧因为照片大小不同，所以照片放网站上后很难对齐</p>
+<p>大概就是以上这些问题</p>
+</blockquote>
+<p>2.解决方法</p>
+<blockquote>
+<p>①对于第一种表格不支持，我换了一种方式输入表格，比如</p>
+<table>
+    <tr>
+    <th>Post</th>
+    <th>Times</th>
+    <th>salary</th>
+    </tr>
+    <tr>
+    <td>waiter</td>
+    <td>30 days</td>
+    <td>1200--2000</td>
+    </tr>
+    </table>
+<p>②Markdown运行时会把\吃掉,所以在前面再加一个\即可解决</p>
+<p>③原因是引用文件是出错，我CSS创建的不是一个文件夹，而是一个文件，所以跟HTML是同一级，所以换成了./style.css就可以正常运行了</p>
+<p>④我尝试了各种方法，比如改hosts，最终都不行，最后还在从外墙进入的github</p>
+<p>⑤这个我是在网上找的解决方案，在vscode 界面按F1 打开命令行，输入&quot;snippet&quot;  选择 &quot;首选项配置用户代码片段&quot;，根据想设置的编程语言，选择后设置</p>
+</blockquote>
+<p>3.未解决部分</p>
+<blockquote>
+<p>①网页内容出现乱码的情况还未得到解决</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+<hr />
+<blockquote>
+<h2>总结：</h2>
+<p>本学期的Web课程，因为作为了一门选修课程，所以上课的时候我总是听一会玩一会，以为网上有课件可以自主学习，所以我没有付出太多的精力去学，看到课程作业的时候要制作几个网页，涉及VScode和Markdown的使用，好在只有两个软件，我后面自学后做题感觉难度也不是那么高了，但我的页面做出了也不是那么丰富，不是很美观，在做此次作业中，也遇到了很多问题，比如不知道css的框架该选用什么，因为自己美术功底不好，还有图片展示的时候图片对齐用了部分时间，因为这次主题随意，所以选哪方面的主题也成了难点，这就叫做还没开始就先行倒下，前面的分析阶段就花了我很多时间，还有就是CSS结构很容易就被我破坏了，又得去看CSS代码，在具体操作的时候遇到的其他问题在前面也已经说过，最令我头大的还属于github，无论是打开github网站还是上传HTML，CSS到github对我来说都是个很大的问题，真的是所有方法都用尽了才用的翻墙，成功进入github后我又不会提交，之前网上都说是在git里面传文件，我又下了个git，按照网上的操作一步步执行，但每次结果都是not found，意思就是失败了查找不到，最后是室友跟我说可以直接把文件托进去进行上传......真是头大，还好问题是得到了解决，通过这学期web的学习，让我觉得遥远的网站制作其实离我并不是那么遥远，并且我对此也很感兴趣，课余时间我也会一直学习web。</p>
+</blockquote>
+
+</body>
+</html>
+<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->
